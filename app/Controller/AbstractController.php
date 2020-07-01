@@ -35,4 +35,14 @@ abstract class AbstractController
      * @var ResponseInterface
      */
     protected $response;
+
+    public function buildSuccess($data = [],$code = 0,$msg = '')
+    {
+        return ['code' => $code,'msg' => $msg,'data' => $data];
+    }
+
+    public function buildFail($msg,$code = 1,$data = [])
+    {
+        return ['code' => $code,'msg' => $msg,'data' => $data];
+    }
 }
